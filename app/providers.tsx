@@ -7,10 +7,12 @@ import { coinbaseWallet } from 'wagmi/connectors';
 import { OnchainKitProvider } from '@coinbase/onchainkit';
 import { type ReactNode, useState } from 'react';
 import { type State, WagmiProvider } from 'wagmi';
+import { frameConnector } from './lib/connector';
 
 const config = createConfig({
   chains: [base],
   connectors: [
+    frameConnector(),
     coinbaseWallet({
       appName: process.env.NEXT_PUBLIC_ONCHAINKIT_PROJECT_NAME,
       preference: process.env.NEXT_PUBLIC_ONCHAINKIT_WALLET_CONFIG as

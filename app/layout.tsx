@@ -5,7 +5,7 @@ import { Providers } from './providers';
 
 export const metadata: Metadata = {
   title: process.env.NEXT_PUBLIC_ONCHAINKIT_PROJECT_NAME,
-  description: 'A Farcaster Frames v2 OnchainKit demo app',
+  description: 'A Farcaster Frames v2 demo app',
 };
 
 export default function RootLayout({
