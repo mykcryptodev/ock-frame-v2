@@ -10,7 +10,7 @@ const appUrl = "https://ock-frame-v2.vercel.app";
 
 const frame = {
   version: "next",
-  imageUrl: `${appUrl}/opengraph-image`,
+  imageUrl: `${appUrl}/og.png`,
   button: {
     title: "Launch Frame",
     action: {
