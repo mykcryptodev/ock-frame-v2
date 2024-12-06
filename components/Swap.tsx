@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import sdk, {
   type FrameContext,
 } from "@farcaster/frame-sdk";
-import { SwapDefault } from "@coinbase/onchainkit/swap";
+import { SwapAmountInput, SwapButton, SwapMessage, SwapToast, SwapToggleButton, Swap} from "@coinbase/onchainkit/swap";
 import { Token } from "@coinbase/onchainkit/token";
 
-export default function Swap() {
+export default function SwapComponent() {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
   const [, setContext] = useState<FrameContext>();
 
@@ -46,8 +46,25 @@ export default function Swap() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto py-4 px-2">
-      <SwapDefault to={swappableTokens} from={swappableTokens} />
+    <div className="w-full">
+      <Swap className="max-w-sm mx-auto">
+        <SwapAmountInput
+          label="Sell"
+          swappableTokens={swappableTokens}
+          token={ETHToken}
+          type="from"
+        />
+        <SwapToggleButton />
+        <SwapAmountInput
+          label="Buy"
+          swappableTokens={swappableTokens}
+          token={USDCToken}
+          type="to"
+        />
+        <SwapButton />
+        <SwapMessage />
+        <SwapToast />
+      </Swap> 
     </div>
   );
 }
