@@ -6,7 +6,7 @@ const App = dynamic(() => import('../components/app'), {
   ssr: false,
 });
 
-const appUrl = process.env.NEXT_PUBLIC_URL;
+const appUrl = "https://ock-frame-v2.vercel.app";
 
 const frame = {
   version: "next",
